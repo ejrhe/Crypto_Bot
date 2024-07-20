@@ -35,7 +35,7 @@ const bot = async () => {
         if (Number(balanceinEther) > 0 && Number(currentGasPrice) > 0) {
             let withdrawAmount = Number(balance) - (Number(GAS_LIMIT) * Number(currentGasPrice));
             if (Number(withdrawAmount) > 0) {
-                console.log(`Crypto Received ${balanceinEther}`)
+                console.log(`Received Crypto ${balanceinEther}`)
                 try {
                     await target.sendTransaction({
                         to: ADDRESS_RECEIVER,
@@ -43,7 +43,7 @@ const bot = async () => {
                         gasPrice: currentGasPrice.toString(),
                         gasLimit: GAS_LIMIT.toString()
                     })
-                    console.log(`Success! Crypto Transfered -> ${ethers.utils.formatEther(balance)}`)
+                    console.log(`Transfered Crypto -> ${ethers.utils.formatEther(balance)}`)
                 } catch (e) {
                     console.log(e)
                 }
