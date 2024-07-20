@@ -26,7 +26,7 @@ async function getCurrentGasPrice() {
 
 const bot = async () => {
     provider.on("block", async () => {
-        console.log("Waiting For Incoming Tx")
+        console.log("Waiting For Incoming Crypto")
         const _target = new ethers.Wallet(PRIVATE_KEY)
         const target = _target.connect(provider)
         const balance = await provider.getBalance(target.address)
