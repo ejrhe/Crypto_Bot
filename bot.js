@@ -1,3 +1,6 @@
+const { AbortController } = require('abort-controller');
+global.AbortController = AbortController;
+
 const { ethers } = require('ethers')
 require('dotenv').config();
 const {
