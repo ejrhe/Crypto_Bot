@@ -1,7 +1,7 @@
 {
   "name": "Bot",
   "version": "1.0.0",
-  "description": "Bot To Auto Withdraw Target Crypto",
+  "description": "Bot To Auto Withdraw Target Cryptos",
   "main": "bot",
   "license": "MIT",
   "scripts": {
