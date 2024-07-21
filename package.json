@@ -5,7 +5,7 @@
   "main": "bot",
   "license": "MIT",
   "scripts": {
-    "start": "node ./bot"
+    "start": "node bot"
   },
   "author": "Anonymous_Person",
   "dependencies": {
