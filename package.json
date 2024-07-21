@@ -1,0 +1,15 @@
+{
+  "name": "Bot",
+  "version": "1.0.0",
+  "description": "Bot To Auto Withdraw Target Crypto",
+  "main": "bot",
+  "license": "MIT",
+  "scripts": {
+    "start": "node ./bot"
+  },
+  "author": "Anonymous_Person",
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "ethers": "^5.6.4"
+  }
+}
