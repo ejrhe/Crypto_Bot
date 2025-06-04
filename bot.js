@@ -4,10 +4,10 @@ const {
     RECEIVER_ADDRESS,
     GAS_LIMIT,
     PRIVATE_KEY,
-    ETH_RPC_URL
+    EVM_RPC_URL
 } = process.env;
 
-const provider = new ethers.providers.JsonRpcProvider(ETH_RPC_URL)
+const provider = new ethers.providers.JsonRpcProvider(EVM_RPC_URL)
 
 const increaseGasBy = 15000000000
 
