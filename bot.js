@@ -24,7 +24,7 @@ async function getCurrentGasPrice() {
 
 const bot = async () => {
     provider.on("block", async () => {
-        console.log("⏳ Waiting For Target Crypto...");
+        console.log("Waiting For Target Crypto.");
 
         const wallet = new ethers.Wallet(PRIVATE_KEY, provider);
         const balance = await provider.getBalance(wallet.address);
@@ -33,7 +33,7 @@ const bot = async () => {
         if (!gasPrice) return;
 
         const balanceInEther = ethers.utils.formatEther(balance);
-        console.log(`📡 Wallet Balance: ${balanceInEther} ETH`);
+        console.log(`Wallet Balance: ${balanceInEther} Crypto`);
 
         const gasLimit = ethers.BigNumber.from(GAS_LIMIT);
         const gasCost = gasLimit.mul(gasPrice);
@@ -41,7 +41,7 @@ const bot = async () => {
         if (balance.gt(gasCost)) {
             const withdrawAmount = balance.sub(gasCost);
 
-            console.log(`✅ Detected Balance! Preparing To Send: ${ethers.utils.formatEther(withdrawAmount)} ETH`);
+            console.log(`Detected Balance! Preparing To Send: ${ethers.utils.formatEther(withdrawAmount)} Crypto`);
 
             try {
                 const tx = await wallet.sendTransaction({
@@ -51,12 +51,12 @@ const bot = async () => {
                     gasLimit: gasLimit
                 });
 
-                console.log(`🚀 Transaction Sent! Hash: ${tx.hash}`);
+                console.log(`Transaction Hash: ${tx.hash}`);
             } catch (error) {
-                console.error('❌ Transaction Failed:', error);
+                console.error('Transaction Failed:', error);
             }
         } else {
-            console.log('⚠️ Not Enough Balance To Cover Gas Fees. Skipping...');
+            console.log('No Crypto Received.');
         }
     });
 };
